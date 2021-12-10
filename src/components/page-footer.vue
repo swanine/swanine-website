@@ -16,7 +16,10 @@
         <i class="nes-icon github is-large"></i>
       </a>
     </div>
-    <p>Copyright © 2021 • Swanine</p>
+    <div class="footer-tag">
+      <p>Copyright © 2021 • Swanine</p>
+      <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2021011456号</a>
+    </div>
   </footer>
 </template>
 
@@ -41,10 +44,28 @@ export default defineComponent({
     transform: scale(2.2);
   }
 }
+
+.footer-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  @media screen and (min-width: 320px) and (max-width:450px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 p {
   margin: 0;
-  padding-bottom: 10px;
   font-size: 10px;
-  text-align: center;
 }
 </style>
