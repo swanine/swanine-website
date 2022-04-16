@@ -1,18 +1,18 @@
 {
 	"name": "swanine-website",
-  "private": true,
-  "version": "2.0.1",
-  "author": "Swanine",
-  "description": "swanine-website-2022",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build-tsc": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "format": "prettier --write ./src",
-    "lint": "eslint ./src --ext .vue,.js,.ts",
-    "lint-fix": "eslint --fix ./src --ext .vue,.js,.ts"
-  },
+	"private": true,
+	"version": "2.0.1",
+	"author": "Swanine",
+	"description": "swanine-website-2022",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"build-tsc": "vue-tsc --noEmit && vite build",
+		"preview": "vite preview",
+		"format": "prettier --write ./src",
+		"lint": "eslint ./src --ext .vue,.js,.ts",
+		"lint-fix": "eslint --fix ./src --ext .vue,.js,.ts"
+	},
 	"devDependencies": {
 		"@types/node": "^17.0.24",
 		"@typescript-eslint/eslint-plugin": "^5.19.0",
@@ -24,11 +24,15 @@
 		"eslint-plugin-import": "^2.25.2",
 		"eslint-plugin-vue": "^8.6.0",
 		"prettier": "^2.6.2",
+		"sass": "^1.50.0",
 		"typescript": "^4.6.3",
 		"vite": "^2.9.5",
 		"vue-tsc": "^0.34.6"
 	},
 	"dependencies": {
-		"vue": "^3.2.33"
+		"@types/lodash.throttle": "^4.1.6",
+		"lodash.throttle": "^4.1.1",
+		"vue": "^3.2.33",
+		"vuex": "^4.0.2"
 	}
 }
