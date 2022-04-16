@@ -1,6 +1,1 @@
-# swan-blog-8bit
-
-![dark](./src/assets/image/dark.png)
-![light](./src/assets/image/light.png)
-
-nes.css
+# swanine-website-2022
