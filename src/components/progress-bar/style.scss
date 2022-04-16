@@ -1,0 +1,71 @@
+.navigation-wrapper .scene-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 6.25rem;
+  width: 100vw;
+  cursor: pointer;
+  transition: all .5s cubic-bezier(.19, 1, .22, 1);
+  opacity: 1;
+
+  &.focusing-scene1 {
+    --nav-bg-color: #ff75d8
+  }
+
+  &.focusing-scene2 {
+    --nav-bg-color: #ff5860
+  }
+
+  &.focusing-scene3 {
+    --nav-bg-color: #33b887
+  }
+
+  &.focusing-scene4 {
+    --nav-bg-color: #a026ff
+  }
+
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .75rem;
+    background-color: var(--nav-bg-color);
+    transition: background-color .7s cubic-bezier(.19, 1, .22, 1);
+
+    .cursor {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30rem;
+      height: 3.75rem;
+      cursor: pointer;
+      transition: transform 1s cubic-bezier(.19,1,.22,1);
+
+      .cursor-wave {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        svg {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          transform-origin: center bottom;
+          will-change: transform;
+        }
+
+        .focused {
+          transition: transform .7s cubic-bezier(.19,1,.22,1);
+        }
+
+        .customColor {
+          fill: var(--nav-bg-color);
+          transition: fill .7s cubic-bezier(.19,1,.22,1);
+        }
+      }
+    }
+  }
+}
