@@ -18,17 +18,25 @@ export default defineComponent({
         store.commit('setCurrentIndex', currentIndex.value + 1)
         flip.value = false
       } else {
-        if (currentIndex.value === 0) return
+        if (currentIndex.value <= 1) return
         store.commit('setCurrentIndex', currentIndex.value - 1)
         flip.value = true
       }
+
       // e.deltaY < 0 ? (flip.value = true) : (flip.value = false)
       // 循环创建bar并追加至node
-      for (let i = 0; i < 26; i++) {
+      const maxBarCount = Math.round(window.innerWidth / 110 + 14)
+
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < maxBarCount; i++) {
         const barItem = createBarItem()
-        barItem.style.left = `${-2300 + i * 130}px`
-        let delayCount = +Math.random().toFixed(2) * 0.2
-        // let DurationCount = + Math.random().toFixed(2) * 4
+        /* 45°直角三角形，勾股计算斜切角距离
+         113.13708498984761 = Math.sqrt(barItem.clientWidth ** 2 + barItem.clientWidth ** 2)
+         -440为固定向左偏移量，pc端所有屏幕一致，移动端及异形屏未适配
+        */
+        barItem.style.left = `${-1280 + i * 113.13708498984761}px`
+        const delayCount = +Math.random().toFixed(2) * 0.22
+        // let DurationCount = +Math.random().toFixed(2) * 4
         barItem.style.animationDelay = `${delayCount}s`
         // barItem.style.animationDuration = `${DurationCount}s`
 
@@ -56,6 +64,7 @@ export default defineComponent({
     const showTransition = (e: WheelEvent) => {
       throttleFn(e)
     }
+
     return () => {
       return (
         <div

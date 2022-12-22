@@ -8,7 +8,7 @@
   background-image: linear-gradient(-225deg, #ff74c2 0%, #ffd999 100%);
 
   &.flip .bar_item {
-    animation: lineFlip 1.6s ease-in-out;
+    animation: lineFlip 1.3s ease-in-out;
   }
 
   .content {
@@ -24,12 +24,12 @@
   .bar_item {
     position: absolute;
     top: 0;
-    height: 280vh;
+    height: 200vh;
     width: 80px;
     border-radius: 50px;
-    transform: translate(-110vh, -168vh) rotate(-53deg);
+    transform: translate3d(-140vh, -140vh, 0) rotate3d(0, 0, 1, -45deg);
     transform-origin: 0% 0%;
-    animation: line 1.6s ease-in-out;
+    animation: line 1.3s ease-in-out;
     z-index: 99;
 
     &:nth-child(3n + 1) {
@@ -48,20 +48,20 @@
 
 @keyframes line {
   0% {
-    transform: translate(-110vh, -168vh) rotate(-53deg);
+    transform: translate3d(-140vh, -140vh, 0) rotate(-45deg);
   }
 
   100% {
-    transform: translate(270vh, 120vh) rotate(-53deg);
+    transform: translate3d(120vh, 120vh, 0) rotate(-45deg);
   }
 }
 
 @keyframes lineFlip {
   0% {
-    transform: translate(270vh, 120vh) rotate(-53deg);
+    transform: translate3d(120vh, 120vh, 0) rotate3d(0, 0, 1, -45deg);
   }
 
   100% {
-    transform: translate(-110vh, -168vh) rotate(-53deg);
+    transform: translate3d(-140vh, -140vh, 0) rotate3d(0, 0, 1, -45deg);
   }
 }
